@@ -1,0 +1,8 @@
+.summary-container {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+.umbrellaForecast {
+  text-align: center;
+}
