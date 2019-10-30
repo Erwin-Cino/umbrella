@@ -1,8 +1,24 @@
 .summary-container {
+  height: 80vh;
   justify-content: center;
   display: flex;
   align-items: center;
 }
 .umbrellaForecast {
+  display: flex;
   text-align: center;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+}
+.dropdownSelect {
+  font-size: 20px;
+  width: 50%;
+}
+.forecastSelect {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+  align-items: center;
 }

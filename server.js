@@ -4,8 +4,9 @@ const express = require("express");
 const app = express();
 
 const dataRoute = require("./api/routes/weatherdata");
-
+const dataRouteCainta = require("./api/routes/cainta");
 app.use("/weatherdata", dataRoute);
+app.use("/cainta", dataRouteCainta);
 
 // Serve static assets in production
 

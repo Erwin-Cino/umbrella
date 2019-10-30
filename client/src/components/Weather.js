@@ -14,6 +14,19 @@ const Weather = () => {
     fetchData();
   }, [url]);
 
+  const citySelectHandler = event => {
+    const cityId = event.target.value;
+    if (cityId == 1) {
+      setUrl("http://localhost:5000/weatherdata");
+      console.log(cityId);
+    }
+
+    if (cityId == 2) {
+      setUrl("http://localhost:5000/cainta");
+      console.log(cityId);
+    }
+  };
+
   let content = <p>Loading...</p>;
   let forecast =
     weatherData &&
@@ -27,9 +40,21 @@ const Weather = () => {
     (forecast && forecast.join(" ").includes("drizzle")) ||
     (forecast && forecast.join(" ").includes("shower"))
   ) {
-    content = <Summary umbrellaForecast={responses.true}></Summary>;
+    content = (
+      <>
+        <Summary
+          citySelect={citySelectHandler}
+          umbrellaForecast={responses.true}
+        ></Summary>
+      </>
+    );
   } else {
-    content = <Summary umbrellaForecast={responses.false}></Summary>;
+    content = (
+      <Summary
+        citySelect={citySelectHandler}
+        umbrellaForecast={responses.false}
+      ></Summary>
+    );
   }
 
   return content;
