@@ -16,12 +16,12 @@ const Weather = () => {
 
   const citySelectHandler = event => {
     const cityId = event.target.value;
-    if (cityId == 1) {
+    if (cityId === 1) {
       setUrl("http://localhost:5000/weatherdata");
       console.log(cityId);
     }
 
-    if (cityId == 2) {
+    if (cityId === 2) {
       setUrl("http://localhost:5000/cainta");
       console.log(cityId);
     }
