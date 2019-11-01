@@ -4,11 +4,11 @@ import Summary from "./Summary";
 import { responses } from "./responses";
 
 const Weather = () => {
-  const [url, setUrl] = useState("http://localhost:5000/weatherdata");
+  const [url, setUrl] = useState("/weatherdata");
   const [weatherData, setWeatherData] = useState();
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios(url);
+      const result = await axios.get(url);
       setWeatherData(result.data);
     };
     fetchData();
@@ -17,12 +17,12 @@ const Weather = () => {
   const citySelectHandler = event => {
     const cityId = event.target.value;
     if (cityId == 1) {
-      setUrl("http://localhost:5000/weatherdata");
+      setUrl("/weatherdata");
       console.log(cityId);
     }
 
     if (cityId == 2) {
-      setUrl("http://localhost:5000/cainta");
+      setUrl("/cainta");
       console.log(cityId);
     }
   };
